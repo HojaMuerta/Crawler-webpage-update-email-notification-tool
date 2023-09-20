@@ -35,14 +35,14 @@ def update():
 def send_email():
     HOST = 'smtp.qq.com'  # 邮箱smtp
     PORT = '465'
-    send_mail = '2270190218@qq.com'  # 发送人邮箱
-    get_mail = '1796033789@qq.com'  # 收件人邮箱
+    send_mail = '*****8@qq.com'  # 发送人邮箱
+    get_mail = '****9@qq.com'  # 收件人邮箱
     title = '有更新，速查！！！'  # 邮件标题
     new_pattern = get_new()  # 提取网页内容列表
     context = new_pattern[0]  # 邮件内容
     # context = "test"
     smtp = smtplib.SMTP_SSL(HOST, 465)  # 启用SSL发信, 端口一般是465
-    res = smtp.login(user=send_mail, password='snvohsbszjgqdjci')  # 登录验证，password是邮箱授权码而非密码，需要去网易邮箱手动开启
+    res = smtp.login(user=send_mail, password='snvohsbdjci')  # 登录验证，password是邮箱授权码而非密码，需要去网易邮箱手动开启
     print('发送结果：', res)
     msg = '\n'.join(
         ['From: {}'.format(send_mail), 'To: {}'.format(get_mail), 'Subject: {}'.format(title), '', context])
